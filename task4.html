@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Our Online Store</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Your Shopping Cart</h1>
+        <ul class="cart-list">
+            <li class="cart-item">
+                <img src="images/vilily-sunscreen.jpg" alt="Vilily Pink Beauty Sunscreen">
+                <div>
+                    <h3>Vilily Pink Beauty Sunscreen with SPF90++</h3>
+                    <p>Price: ₱99.00</p>
+                </div>
+                <div class="quantity">
+                    <label for="qty1">Qty:</label>
+                    <input type="number" id="qty1" name="quantity" min="1" value="1">
+                </div>
+            </li>
+            <li class="cart-item">
+                <img src="images/sneakers.jpg" alt="Sneakers for Men and Women">
+                <div>
+                    <h3>Sneakers for Men and Women</h3>
+                    <p>Price: ₱338.99</p>
+                </div>
+                <div class="quantity">
+                    <label for="qty2">Qty:</label>
+                    <input type="number" id="qty2" name="quantity" min="1" value="2">
+                </div>
+            </li>
+        </ul>
+        
+        <section class="subtotal">
+            <p><strong>Subtotal: ₱775.98</strong></p>
+            <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+        </section>
+        
+        <section class="empty-cart" style="display: none;">
+            <h2>Your cart is currently empty</h2>
+            <p><a href="products.html">Start shopping</a> to add items.</p>
+        </section>
+    </main>
+</body>
+</html>

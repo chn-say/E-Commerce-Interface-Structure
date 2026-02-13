@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Our Online Store</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Checkout</h1>
+        
+        <section>
+            <h2>Shipping Information</h2>
+            <fieldset>
+                <legend>Shipping Address</legend>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="street">Street Address:</label>
+                <input type="text" id="street" name="street" required>
+                
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" required>
+            </fieldset>
+        </section>
+        
+        <section>
+            <h2>Payment Details</h2>
+            <form action="confirmation.html" method="post">
+                <fieldset>
+                    <legend>Payment Method</legend>
+                    <label><input type="radio" name="payment" value="credit-card" required> Credit Card</label><br>
+                    <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+                </fieldset>
+                
+                <label for="card-number">Card Number (if Credit Card):</label>
+                <input type="text" id="card-number" name="card-number">
+                
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+    </main>
+
+    <aside>
+        <h3>Order Summary</h3>
+        <p>Subtotal: ₱775.98</p>
+        <p>Shipping: ₱50.00</p>
+        <p><strong>Total: ₱825.98</strong></p>
+    </aside>
+</body>
+</html>
