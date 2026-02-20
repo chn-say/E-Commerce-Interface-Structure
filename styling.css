@@ -1,0 +1,153 @@
+/* --- Global Variables (Task 1) --- */
+:root {
+    --primary-color: #2c3e50;   
+    --accent-color: #e67e22;     
+    --bg-light: #f4f4f4;        
+    --text-main: #333333;       
+    --white: #ffffff;
+}
+
+/* --- Base Body & Headings (Task 1) --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; border-bottom: 2px solid var(--accent-color); display: inline-block; }
+h3 { font-size: 1.2rem; }
+
+/* --- Navigation (Task 2) --- */
+header { background-color: var(--primary-color); padding: 1rem; }
+nav ul { list-style: none; display: flex; gap: 20px; padding: 0; }
+
+nav a {
+    color: var(--white);
+    text-decoration: none; /* Task 2.1: Remove underlines */
+    font-weight: bold;
+    transition: all 0.3s ease; /* Task 2.2: Smooth transitions */
+}
+
+nav a:hover {
+    color: var(--accent-color); /* Task 2.3: Change color on hover */
+}
+
+/* --- Hero & Buttons (Task 2) --- */
+.hero { text-align: center; padding: 4rem 2rem; background-color: var(--white); }
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.3s; /* Task 2.2 */
+}
+
+button:active { transform: scale(0.95); } /* Task 2.4: Pressed effect */
+button:focus { outline: 3px solid var(--primary-color); } /* Task 2.5: Focus indicator */
+
+/* --- Product Cards (Task 3 & Morphing Transition) --- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+}
+
+/* Card Base Style (Task 3.1 & 3.2) */
+.product {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px; /* Initial radius */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+    /* MORPHING TRANSITION CONFIGURATION */
+    /* We use a 'cubic-bezier' timing function for a bouncy, elastic feel */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* Morphing Hover State */
+.product:hover {
+    transform: translateY(-12px) scale(1.03); /* Lifts and grows */
+    border-radius: 25px; /* Changes shape (morphs) */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Deeper shadow for depth */
+    border-color: var(--accent-color);
+}
+
+/* Task 3.3: Alternating Background Colors */
+.products .product:nth-child(odd) {
+    background-color: #fdfdfd;
+}
+
+strong {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* --- Form Layout (Task 4.3 Support) --- */
+
+/* Align labels and inputs in a column */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between rows */
+    padding: 2rem;
+    max-width: 600px;
+}
+
+/* Create a row for each label/input pair */
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+/* 1. Fix the label width so the boxes start at the same point */
+label {
+    width: 150px; 
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* 2. Adjust the size of the boxes to be identical */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 350px; /* Adjust this value to make boxes wider or narrower */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    /* Task 2.2: Smooth transition for interaction */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Task 2.5: Focus indicator for input boxes */
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
+}
+
+/* Task 4.3: Validation styling */
+input:required {
+    border-left: 5px solid var(--accent-color);
+}
+
+input:valid {
+    border-left: 5px solid #27ae60; /* Green for valid */
+}
